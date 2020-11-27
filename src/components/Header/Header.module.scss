@@ -18,6 +18,8 @@
   a {
     text-decoration: none;
     color: white;
+    padding: 0px 10px;
+    font-size: 1.2rem;
   }
 
   form {
@@ -32,6 +34,7 @@
     height: 30px;
     width: 40%;
     font-size: 1.1rem;
+    transition: width 0.2s ease-in-out;
     &:focus {
       width: 70%;
     }
