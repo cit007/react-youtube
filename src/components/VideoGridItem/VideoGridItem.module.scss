@@ -1,8 +1,15 @@
-.itme {
-  display: block;
-  width: 22.5%;
+.item {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 10px;
+  width: 23%;
   text-decoration: none;
   img {
     width: 100%;
+  }
+
+  span {
+    margin-top: 5px;
+    height: 50px;
   }
 }
