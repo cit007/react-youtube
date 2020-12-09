@@ -8,7 +8,8 @@ const reducer = (state, action) => {
     console.log(state, action)
     switch(action.type) {
         case "SET_POPULAR":
-            return action.payload.popular
+            // set popular var
+            return {popular:action.payload.popular}
         default:
             return state
     }
