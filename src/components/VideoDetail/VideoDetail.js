@@ -3,6 +3,9 @@ import { useLocation } from "react-router-dom";
 import { youtubeApi } from "../../apis/apis";
 import { Store } from "../../store/index";
 import VideoPlay from "../VideoPlay/VideoPlay";
+import Style from "./VideoDetail.module.scss";
+import Linkify from "react-linkify";
+
 const VideoDetail = () => {
   const { globalState, setGlobalState } = useContext(Store);
   const location = useLocation();
@@ -33,13 +36,15 @@ const VideoDetail = () => {
   }, []);
 
   return (
-    <div>
+    <div className={Style.wrap}>
       {globalState.detail && globalState.detail.id ? (
         <div>
           <VideoPlay id={globalState.detail.id} />
           <p>{globalState.detail.snippet.title}</p>
           <hr />
-          <pre>{globalState.detail.snippet.description}</pre>
+          <pre>
+            <Linkify>{globalState.detail.snippet.description}</Linkify>
+          </pre>
         </div>
       ) : (
         <div>No Data</div>
