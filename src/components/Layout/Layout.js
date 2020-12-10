@@ -1,17 +1,15 @@
-import React from 'react'
-import Header from "../Header/Header"
-import Style from "./Layout.module.scss"
+import React from "react";
+import Header from "../Header/Header";
+import Style from "./Layout.module.scss";
 
-const Layout = ({children}) => {
-    console.log(children);
-    return (
-        <div className={Style.wrapper}>
-            <Header />
-            <div className={Style.main}>
-                {children}
-            </div>
-        </div>
-    )
-}
+const Layout = ({ children }) => {
+  console.log(children);
+  return (
+    <div className={Style.wrapper}>
+      <Header />
+      <div className={Style.main}>{children}</div>
+    </div>
+  );
+};
 
-export default Layout
+export default Layout;

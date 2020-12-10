@@ -1,8 +1,8 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Main from "./pages/Main"
-import Search from "./pages/Search"
-import Detail from "./pages/Detail"
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Main from "./pages/Main";
+import Search from "./pages/Search";
+import Detail from "./pages/Detail";
 
 function App() {
   return (
