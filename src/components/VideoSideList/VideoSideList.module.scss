@@ -1,0 +1,9 @@
+.wrap {
+  padding: 1rem;
+  //right side list in detail view
+  //   flex-basis: 400px;
+
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+}
