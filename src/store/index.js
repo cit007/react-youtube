@@ -3,6 +3,7 @@ import React, { createContext, useReducer } from "react";
 const initialState = {
   popular: [],
   detail: {},
+  side: [],
 };
 
 const reducer = (state, action) => {
@@ -13,6 +14,8 @@ const reducer = (state, action) => {
       return { ...state, popular: action.payload.popular };
     case "SET_DETAIL":
       return { ...state, detail: action.payload.detail };
+    case "SET_RELATED":
+      return { ...state, side: action.payload.side };
     default:
       return state;
   }

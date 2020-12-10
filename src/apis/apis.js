@@ -28,4 +28,11 @@ export const youtubeApi = {
         id,
       },
     }),
+  relatedVideo: async (id) =>
+    await api.get("/search", {
+      params: {
+        ...commonParams,
+        relatedToVideoId: id,
+      },
+    }),
 };
