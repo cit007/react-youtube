@@ -10,9 +10,9 @@ const reducer = (state, action) => {
     switch(action.type) {
         case "SET_POPULAR":
             // set popular var
-            return {popular:action.payload.popular}
+            return {...state, popular:action.payload.popular}
         case "SET_DETAIL":
-            return {detail:action.payload.selected}
+            return {...state, detail:action.payload.selected}
         default:
             return state
     }
