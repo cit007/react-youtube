@@ -16,5 +16,14 @@ export const youtubeApi = {
                 regionCode: "JP",
                 chart: "mostPopular"
             }
+        }),
+    detailVideo: async (id) => 
+        await api.get("videos", {
+            params: {
+                part: "snippet",
+                maxResults: 100,
+                regionCode: "JP",
+                id
+            }
         })
 }
