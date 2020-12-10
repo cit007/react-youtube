@@ -7,22 +7,24 @@ const api = axios.create({
   },
 });
 
+const commonParams = {
+  part: "snippet",
+  maxResults: 100,
+  regionCode: "JP",
+};
+
 export const youtubeApi = {
   popularVideo: async () =>
     await api.get("videos", {
       params: {
-        part: "snippet",
-        maxResults: 100,
-        regionCode: "JP",
+        ...commonParams,
         chart: "mostPopular",
       },
     }),
   detailVideo: async (id) =>
     await api.get("videos", {
       params: {
-        part: "snippet",
-        maxResults: 100,
-        regionCode: "JP",
+        ...commonParams,
         id,
       },
     }),
