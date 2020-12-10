@@ -1,7 +1,8 @@
 import React, {createContext, useReducer} from 'react'
 
 const initialState = {
-    popular: []
+    popular: [],
+    detail: {}
 }
 
 const reducer = (state, action) => {
@@ -10,6 +11,8 @@ const reducer = (state, action) => {
         case "SET_POPULAR":
             // set popular var
             return {popular:action.payload.popular}
+        case "SET_DETAIL":
+            return {detail:action.payload.selected}
         default:
             return state
     }
