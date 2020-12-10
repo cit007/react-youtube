@@ -2,7 +2,11 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  padding-top: 56.2%;
+  &:before {
+    display: block;
+    content: "";
+    padding-top: 56.2%;
+  }
   .video {
     position: absolute;
     top: 0;
