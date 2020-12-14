@@ -24,16 +24,23 @@ const VideoSideList = () => {
     <div className={Style.wrap}>
       {globalState.side ? (
         globalState.side.map((item) => {
-          return (
-            item.id &&
-            item.id.videoId && (
+          console.log("VideoSideList :", item);
+
+          return item ? (
+            item.id && item.id.videoId && item.snippet && (
               <VideoSideListItem
                 id={item.id.videoId}
                 key={item.id.videoId}
                 thumbnails={item.snippet.thumbnails.medium.url}
-                title={item.snippet.title}
+                title={
+                  item.snippet.title.length < 30
+                    ? item.snippet.title
+                    : item.snippet.title.substring(0, 30).concat("...")
+                }
               />
             )
+          ) : (
+            <div>No Data</div>
           );
         })
       ) : (
