@@ -12,24 +12,28 @@ const VideoSideList = () => {
     } = globalState;
     console.log("VideoSideList:", id);
     youtubeApi.relatedVideo(id).then((res) => {
+      console.log("VideoSideList get data:", res);
       const {
         data: { items },
       } = res;
       setGlobalState({ type: "SET_RELATED", payload: { side: items } });
     });
-  }, []);
+  }, [globalState.detail]);
 
   return (
     <div className={Style.wrap}>
       {globalState.side ? (
         globalState.side.map((item) => {
           return (
-            <VideoSideListItem
-              id={item.id.videoId}
-              key={item.id.videoId}
-              thumbnails={item.snippet.thumbnails.medium.url}
-              title={item.snippet.title}
-            />
+            item.id &&
+            item.id.videoId && (
+              <VideoSideListItem
+                id={item.id.videoId}
+                key={item.id.videoId}
+                thumbnails={item.snippet.thumbnails.medium.url}
+                title={item.snippet.title}
+              />
+            )
           );
         })
       ) : (

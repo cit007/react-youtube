@@ -33,7 +33,7 @@ const VideoDetail = () => {
         });
       })
       .catch((err) => alert(err));
-  }, []);
+  }, [location.search]);
 
   return (
     <div className={Style.wrap}>

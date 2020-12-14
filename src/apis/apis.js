@@ -9,8 +9,9 @@ const api = axios.create({
 
 const commonParams = {
   part: "snippet",
-  maxResults: 100,
+  maxResults: 5,
   regionCode: "JP",
+  type: "video",
 };
 
 export const youtubeApi = {
