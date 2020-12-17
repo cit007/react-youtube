@@ -22,15 +22,15 @@ export const youtubeApi = {
         chart: "mostPopular",
       },
     }),
-  detailVideo: async (id) =>
-    await api.get("videos", {
+  detailVideo: (id) =>
+    api.get("videos", {
       params: {
         ...commonParams,
         id,
       },
     }),
-  relatedVideo: async (id) =>
-    await api.get("/search", {
+  relatedVideo: (id) =>
+    api.get("/search", {
       params: {
         ...commonParams,
         relatedToVideoId: id,

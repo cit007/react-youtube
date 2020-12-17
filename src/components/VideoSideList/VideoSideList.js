@@ -1,24 +1,10 @@
 import React, { useEffect, useContext } from "react";
-import { youtubeApi } from "../../apis/apis";
 import { Store } from "../../store/index";
 import VideoSideListItem from "../VideoSideListItem/VideoSideListItem";
 import Style from "./VideoSideList.module.scss";
 
 const VideoSideList = () => {
   const { globalState, setGlobalState } = useContext(Store);
-  useEffect(() => {
-    const {
-      detail: { id },
-    } = globalState;
-    console.log("VideoSideList:", id);
-    youtubeApi.relatedVideo(id).then((res) => {
-      console.log("VideoSideList get data:", res);
-      const {
-        data: { items },
-      } = res;
-      setGlobalState({ type: "SET_RELATED", payload: { side: items } });
-    });
-  }, [globalState.detail]);
 
   return (
     <div className={Style.wrap}>
