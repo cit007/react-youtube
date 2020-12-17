@@ -4,6 +4,7 @@ const initialState = {
   popular: [],
   detail: {},
   side: [],
+  search: [],
 };
 
 const reducer = (state, action) => {
@@ -16,6 +17,8 @@ const reducer = (state, action) => {
       return { ...state, detail: action.payload.detail };
     case "SET_RELATED":
       return { ...state, side: action.payload.side };
+    case "SET_SEARCH":
+      return { ...state, search: action.payload.search };
     default:
       return state;
   }

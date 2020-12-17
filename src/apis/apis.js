@@ -9,7 +9,7 @@ const api = axios.create({
 
 const commonParams = {
   part: "snippet",
-  maxResults: 5,
+  maxResults: 30,
   regionCode: "JP",
   type: "video",
 };
@@ -34,6 +34,13 @@ export const youtubeApi = {
       params: {
         ...commonParams,
         relatedToVideoId: id,
+      },
+    }),
+  searchVideo: async (term) =>
+    await api.get("/search", {
+      params: {
+        ...commonParams,
+        q: term,
       },
     }),
 };
