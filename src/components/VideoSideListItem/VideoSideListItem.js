@@ -7,19 +7,21 @@ import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 const VideoSideListItem = ({ id, title, thumbnails, channel }) => {
   console.log("VideoSideListItem :", id, title, thumbnails);
   return (
-    <Link
-      to={{ pathname: "detail", search: `?v=${id}` }}
-      className={Style.item}
-    >
-      <div className={Style.wrap}>
-        <img src={thumbnails} alt={title} />
-      </div>
-      <p>
-        {title} <br />
-        {channel}
-        <FontAwesomeIcon icon={faCheckCircle} />
-      </p>
-    </Link>
+    <div className={Style.item}>
+      <Link to={{ pathname: "detail", search: `?v=${id}` }}>
+        <div className={Style.wrap}>
+          <img src={thumbnails} alt={title} />
+        </div>
+        <div>
+          <ul>
+            <li>{title}</li>
+            <li>
+              {channel} <FontAwesomeIcon icon={faCheckCircle} />
+            </li>
+          </ul>
+        </div>
+      </Link>
+    </div>
   );
 };
 
