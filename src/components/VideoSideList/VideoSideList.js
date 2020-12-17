@@ -23,6 +23,7 @@ const VideoSideList = () => {
                     ? item.snippet.title
                     : item.snippet.title.substring(0, 30).concat("...")
                 }
+                channel={item.snippet.channelTitle}
               />
             )
           ) : (

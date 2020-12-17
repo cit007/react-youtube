@@ -10,7 +10,7 @@ const VideoDetail = () => {
   return (
     <div className={Style.wrap}>
       {globalState.detail && globalState.detail.id ? (
-        <div>
+        <div className={Style.videoContainer}>
           <VideoPlay id={globalState.detail.id} />
           <p>{globalState.detail.snippet.title}</p>
           <hr />

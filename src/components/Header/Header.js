@@ -1,8 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FaYoutube } from "react-icons/fa";
+import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import styles from "./Header.module.scss";
 
 const Header = () => {
@@ -13,14 +12,13 @@ const Header = () => {
   }
   function onSubmit(e) {
     e.preventDefault();
-    console.log("search history", history);
     history.push(`search?query=${term}`);
   }
   return (
     <div className={styles.header}>
       <div>
         <div className={styles.logo}>
-          <FaYoutube />
+          <FontAwesomeIcon icon={faYoutube} />
           <Link to="/">Youtube</Link>
         </div>
       </div>
@@ -31,9 +29,6 @@ const Header = () => {
             placeholder="Search..."
             onChange={onChange}
           ></input>
-          <button type="submit">
-            <FontAwesomeIcon icon={faSearch} />
-          </button>
         </form>
       </div>
     </div>

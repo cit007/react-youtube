@@ -1,6 +1,5 @@
 .wrap {
-  flex-basis: 65%;
-  padding: 1rem;
+  width: 80%;
   font-size: 1.2rem;
   color: black;
   font-weight: 600;
@@ -12,5 +11,12 @@
     white-space: pre-wrap;
     word-wrap: break-word;
     // npm : react-linkify for url link
+  }
+
+  .videoContainer {
+    padding: 10px;
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
   }
 }

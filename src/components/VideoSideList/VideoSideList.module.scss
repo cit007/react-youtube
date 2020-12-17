@@ -1,9 +1,11 @@
 .wrap {
   //right side list in detail view
-  flex-basis: 350px;
-  padding: 1rem;
-
+  width: 20%;
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
