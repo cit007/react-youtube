@@ -1,0 +1,18 @@
+.wrapper {
+  position: relative;
+
+  .notice {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    padding: 10px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+    opacity: 0.9;
+    border-radius: 10px;
+    background-color: orange;
+    transform: translate(-50%, -50%);
+  }
+}

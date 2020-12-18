@@ -1,31 +1,42 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import Layout from "../components/Layout/Layout";
 import { youtubeApi } from "../apis/apis";
 import { Store } from "../store/index";
 import VideoGrid from "../components/VideoGrid/VideoGrid";
 import VideoGridItem from "../components/VideoGridItem/VideoGridItem";
+import Loader from "../components/Loader/Loader";
+import Notice from "../components/Notice/Notice";
+
 const Main = () => {
   const { globalState, setGlobalState } = useContext(Store);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  const fetchData = async () => {
+    try {
+      const {
+        data: { items },
+      } = await youtubeApi.popularVideo();
+      console.log();
+      setGlobalState({ type: "SET_POPULAR", payload: { popular: items } });
+    } catch {
+      setError("fetch data error");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    youtubeApi
-      .popularVideo()
-      .then((res) => {
-        const {
-          data: { items },
-        } = res;
-        console.log(items);
-
-        setGlobalState({ type: "SET_POPULAR", payload: { popular: items } });
-      })
-      .catch((err) => alert(err));
+    fetchData();
   }, []);
 
   return (
     <Layout>
       <VideoGrid>
-        {
-          // console.log("setGlobalState after",globalState)
+        {loading ? (
+          <Loader />
+        ) : (
+          globalState.popular &&
           globalState.popular.map((item) => {
             console.log("each item", item);
             return (
@@ -37,7 +48,8 @@ const Main = () => {
               />
             );
           })
-        }
+        )}
+        {error && <Notice message={error} />}
       </VideoGrid>
     </Layout>
   );

@@ -15,8 +15,8 @@ const commonParams = {
 };
 
 export const youtubeApi = {
-  popularVideo: async () =>
-    await api.get("videos", {
+  popularVideo: () =>
+    api.get("videos", {
       params: {
         ...commonParams,
         chart: "mostPopular",
