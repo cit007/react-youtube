@@ -17,7 +17,7 @@ const Main = () => {
       const {
         data: { items },
       } = await youtubeApi.popularVideo();
-      console.log();
+
       setGlobalState({ type: "SET_POPULAR", payload: { popular: items } });
     } catch {
       setError("fetch data error");
