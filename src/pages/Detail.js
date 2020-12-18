@@ -45,6 +45,9 @@ const Detail = () => {
       }
     } catch {
       setError("fetch data error");
+      setTimeout(() => {
+        setError("");
+      }, 2000);
     } finally {
       setLoading(false);
     }
@@ -58,6 +61,7 @@ const Detail = () => {
     <Layout>
       {loading ? <Loader /> : globalState.detail && <VideoDetail />}
       {loading ? <Loader /> : globalState.side && <VideoSideList />}
+      {error && <Notice message={error} />}
     </Layout>
   );
 };

@@ -21,6 +21,9 @@ const Main = () => {
       setGlobalState({ type: "SET_POPULAR", payload: { popular: items } });
     } catch {
       setError("fetch data error");
+      setTimeout(() => {
+        setError("");
+      }, 2000);
     } finally {
       setLoading(false);
     }

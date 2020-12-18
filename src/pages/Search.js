@@ -26,6 +26,9 @@ const Search = () => {
       setGlobalState({ type: "SET_SEARCH", payload: { search: items } });
     } catch {
       setError("fetch data error");
+      setTimeout(() => {
+        setError("");
+      }, 2000);
     } finally {
       setLoading(false);
     }
