@@ -1,3 +1,36 @@
+# React youtube
+
+# Titles
+
+- Learning Responsive Layout with SCSS / Youtube V3 Api / Global State
+
+# Introduction - the project's aim
+
+- This webpage fetch data async and show data using youtube v3 api
+  \*\* youtube v3 api - ://developers.google.com/youtube/v3/docs
+- more info:function component/hooks/scss/route/scss/axios/handle loading/handel error notice
+
+# Technologies
+
+- function component / react hooks / global state(reducer/useContext)
+- handel loading/error notice
+- use scss with node-sass package
+- beautiful data fetch using axios
+
+# Installed Package
+
+- Axios for data fetch
+- node-sass for style
+- normalize.css for style reset
+- react-router-dom
+- Youtube
+
+## Screens
+
+- Main View (popular video)
+- Detail View (detail view with related video)
+- Search View (search video)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
